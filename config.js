@@ -2,7 +2,7 @@
 // 여기서 사용자 입장에서 꼭 입력해야 하는 정보를 의사결정해서 개발에 반영할 필요가 있습니다.
 const siteConfig = {
   username: "yebinable", // GitHub 사용자 이름
-  repositoryName: "yebinable.github.io", // GitHub 저장소 이름
+  repositoryName: "https://yebinable.github.io", // GitHub 저장소 이름
   mainColor: "#3498db", // 사이트의 주 색상
   textColor: "#333333", // 기본 텍스트 색상
   blogTitle: "yebinable 기술 정리 & 공유 블로그", // 블로그 제목
