@@ -179,7 +179,10 @@ function styleMarkdown(kinds, text, title_info = null) {
     image.src = title_info.thumbnail;
     image.alt = title_info.title;
     image.classList.add(...postimgtitleStyle.split(" "));
-    title_section.appendChild(image);
+
+    if(title_info.thumbnail !== "img/default_thumb.png") {
+            title_section.appendChild(image);
+    }
 
     // section styling
     title_section.classList.add(...postsectionStyle.split(" "));
