@@ -21,6 +21,8 @@ window.addEventListener("click", (event) => {
     } else if (event.target.parentNode === mobileMenu) {
         event.preventDefault();
 
+        console.log(event.target.innerText);
+        console.log(window.location.origin);
         if (event.target.innerText + ".md" === "blog.md") {
             if (blogList.length === 0) {
                 // 블로그 리스트 로딩
