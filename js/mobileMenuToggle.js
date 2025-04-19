@@ -1,6 +1,13 @@
+const menuButton = document.getElementById("menu-button");
+const menu = document.getElementById("menu");
+
+/*
+모바일 환경에서 menu, 이 menu는 이벤트 위임으로 최적화하면 불필요한 코드가 많은 함수입니다. 시간상 최적화하지 않고 넘깁니다.
+*/
+const mobileMenu = document.getElementById("mobileMenu");
+
 window.addEventListener("click", (event) => {
     if (event.target === menuButton) {
-        // 기존 코드 유지
         if (mobileMenu.innerHTML === "") {
             mobileMenu.innerHTML = menu.innerHTML;
             const menuItems = mobileMenu.querySelectorAll("a");
@@ -17,10 +24,7 @@ window.addEventListener("click", (event) => {
     } else if (event.target.parentNode === mobileMenu) {
         event.preventDefault();
 
-        // 수정된 부분: 파일명을 소문자로 변환
-        const filename = (event.target.innerText + ".md").toLowerCase();
-
-        if (filename === "blog.md") {
+        if (event.target.innerText + ".md" === "blog.md") {
             if (blogList.length === 0) {
                 // 블로그 리스트 로딩
                 initDataBlogList().then(() => {
@@ -31,11 +35,11 @@ window.addEventListener("click", (event) => {
             }
             // console.log(origin)
             const url = new URL(origin);
-            url.searchParams.set("menu", filename);
+            url.searchParams.set("menu", event.target.innerText.toLowercase() + ".md");
             window.history.pushState({}, "", url);
             mobileMenu.innerHTML = "";
         } else {
-            renderOtherContents(filename);
+            renderOtherContents(event.target.innerText.toLowercase() + ".md");
             mobileMenu.innerHTML = "";
         }
     } else {
