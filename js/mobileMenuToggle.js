@@ -3,7 +3,7 @@ window.addEventListener("click", (event) => {
     const menu = document.getElementById("menu");
     const mobileMenu = document.getElementById("mobileMenu");
 
-    
+
     if (event.target === menuButton) {
         if (mobileMenu.innerHTML === "") {
             mobileMenu.innerHTML = menu.innerHTML;
@@ -32,11 +32,11 @@ window.addEventListener("click", (event) => {
             }
             // console.log(origin)
             const url = new URL(origin);
-            url.searchParams.set("menu", event.target.innerText.toLowercase() + ".md");
+            url.searchParams.set("menu", event.target.innerText+ ".md");
             window.history.pushState({}, "", url);
             mobileMenu.innerHTML = "";
         } else {
-            renderOtherContents(event.target.innerText.toLowercase() + ".md");
+            renderOtherContents(event.target.innerText + ".md");
             mobileMenu.innerHTML = "";
         }
     } else {
