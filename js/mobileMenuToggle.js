@@ -23,19 +23,7 @@ window.addEventListener("click", (event) => {
 
         const targetMenuName = (event.target.innerText).toLowerCase();
         if (event.target.innerText + ".md" === "blog.md") {
-            if (blogList.length === 0) {
-                // 블로그 리스트 로딩
-                initDataBlogList().then(() => {
-                    renderBlogList();
-                });
-            } else {
-                renderBlogList();
-            }
-            // console.log(origin)
-            const url = new URL(origin);
-            url.searchParams.set("menu", targetMenuName+ ".md");
-            window.history.pushState({}, "", url);
-            mobileMenu.innerHTML = "";
+            window.location.href = origin;
         } else {
             renderOtherContents(targetMenuName + ".md");
             mobileMenu.innerHTML = "";
