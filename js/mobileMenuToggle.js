@@ -1,12 +1,9 @@
-const menuButton = document.getElementById("menu-button");
-const menu = document.getElementById("menu");
-
-/*
-모바일 환경에서 menu, 이 menu는 이벤트 위임으로 최적화하면 불필요한 코드가 많은 함수입니다. 시간상 최적화하지 않고 넘깁니다.
-*/
-const mobileMenu = document.getElementById("mobileMenu");
-
 window.addEventListener("click", (event) => {
+    const menuButton = document.getElementById("menu-button");
+    const menu = document.getElementById("menu");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    
     if (event.target === menuButton) {
         if (mobileMenu.innerHTML === "") {
             mobileMenu.innerHTML = menu.innerHTML;
