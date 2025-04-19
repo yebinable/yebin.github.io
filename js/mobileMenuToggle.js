@@ -23,7 +23,7 @@ window.addEventListener("click", (event) => {
 
         const targetMenuName = (event.target.innerText).toLowerCase();
         if (event.target.innerText + ".md" === "blog.md") {
-            window.location.href = origin;
+            window.location.reload();
         } else {
             renderOtherContents(targetMenuName + ".md");
             mobileMenu.innerHTML = "";
