@@ -21,8 +21,7 @@ window.addEventListener("click", (event) => {
     } else if (event.target.parentNode === mobileMenu) {
         event.preventDefault();
 
-        console.log(event.target.innerText);
-        console.log(window.location.origin);
+        const targetMenuName = (event.target.innerText).toLowerCase();
         if (event.target.innerText + ".md" === "blog.md") {
             if (blogList.length === 0) {
                 // 블로그 리스트 로딩
@@ -34,11 +33,11 @@ window.addEventListener("click", (event) => {
             }
             // console.log(origin)
             const url = new URL(origin);
-            url.searchParams.set("menu", event.target.innerText+ ".md");
+            url.searchParams.set("menu", targetMenuName+ ".md");
             window.history.pushState({}, "", url);
             mobileMenu.innerHTML = "";
         } else {
-            renderOtherContents(event.target.innerText + ".md");
+            renderOtherContents(targetMenuName + ".md");
             mobileMenu.innerHTML = "";
         }
     } else {
