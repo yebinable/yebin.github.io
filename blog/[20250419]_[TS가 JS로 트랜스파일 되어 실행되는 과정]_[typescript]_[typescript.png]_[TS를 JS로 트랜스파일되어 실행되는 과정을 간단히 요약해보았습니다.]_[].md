@@ -1,4 +1,4 @@
-﻿# `타입스크립트` 란?
+﻿# 타입스크립트 란?
 - 타입스크립트(ts)는 더 안전하고, 더 정교하게 JavaScript를 작성하게 해주는 개발자 구인 트랜스파일 언어 입니다.
 - Microsoft 가 개발하여 든든하죠(?)
 
@@ -29,6 +29,8 @@ JS 엔진 내부 처리
 ```
 
 # 조금 더 상세하게 보기 
+![](/img/content_img/2025-04-20-00-24-19.png)
+
 ```mermaid
 sequenceDiagram
 actor Developer
